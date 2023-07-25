@@ -1,13 +1,6 @@
 <html>
-
-<script>
-
-if (window.opener) window.opener.parent.location.replace('https://google.com');
-
-if (window.parent != window) window.parent.location.replace('https://evil.com');
-
-</script>
-
-test
-
+ <body>
+  <li><a href="bad.example.com" target="_blank">Vulnerable target using html link to open the new page</a></li>
+  <button onclick="window.open('https://bad.example.com')">Vulnerable target using javascript to open the new page</button>
+ </body>
 </html>
