@@ -1,6 +1,14 @@
 <html>
- <body>
-  <li><a href="bad.example.com" target="_blank">Vulnerable target using html link to open the new page</a></li>
-  <button onclick="window.open('https://bad.example.com')">Vulnerable target using javascript to open the new page</button>
- </body>
+    <head>
+    </head>
+    <body>
+        <h1>Something interesting</h1>
+        <p>This page contains some very interesting info.</p>
+        <p>When you are done reading it, please close the tab.</p>
+        <script>
+            setTimeout(function() {
+                window.opener.location.replace('https://google.com');
+            });
+        </script>
+    </body>
 </html>
